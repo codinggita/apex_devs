@@ -39,8 +39,8 @@ app.get('/account_setting', (req,res)=>{
     res.send("Setting of your profile")
 })
 
-app.get('/account_projects', (req,res)=>{
-    res.send("Your Projects")
+app.get('/account_help', (req,res)=>{
+    res.send("Ask for help")
 })
 
 
