@@ -4,16 +4,23 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
+const Data = {
+    cse:[{
+        id: 1,
+        user : "stupid"
+    }]
+}
+
 app.use(bodyParser.json())
 
 app.post('/account', (req, res)=>{
-    const newApex = req.body
-    res.json({message:"New User Join Apex Community", newApex});
+    const add = 
+    res.send({message:"New User Join Apex Community", newApex});
 })
 
 app.get('/account/:id', (req,res)=>{
     const apexDev = req.params.id
-    res.send(`Hi ${apexDev}, Welcome to your profile`)
+    console.log(`Hi ${apexDev}, Welcome to your profile`)
 })
 
 app.get('/account_projects', (req,res)=>{
