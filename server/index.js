@@ -7,20 +7,20 @@ const port = 3000;
 const Data = {
     cse:[{
         id: 1,
-        user : "stupid"
+        user : "Bluetooth"
     }]
 }
 
 app.use(bodyParser.json())
 
 app.post('/account', (req, res)=>{
-    const add = 
     res.send({message:"New User Join Apex Community", newApex});
 })
 
 app.get('/account/:id', (req,res)=>{
     const apexDev = req.params.id
-    console.log(`Hi ${apexDev}, Welcome to your profile`)
+    res.send(`Hi ${apexDev
+    }, Welcome to your profile`)
 })
 
 app.get('/account_projects', (req,res)=>{
