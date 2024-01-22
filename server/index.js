@@ -16,6 +16,11 @@ const profile = {
             name: "Mern User",
             username: "noobuser",
             bio: "cse student learning mern stack",
+            thread:[
+                {
+                    title:"I need help in game project made in C++",
+                }
+            ],
             project:[
                 {
                     projectId: 1,
@@ -27,8 +32,9 @@ const profile = {
                     img: [ "img1.jpg", "img2.jpg" ],
                     likes: "12",
                     dislikes: "4",
-                    link: "url"
-                },
+                    link: "url",
+                    tags:["data"]
+                },,
                 {
                     projectId: 2,
                     title: "Genius Code Editor",
@@ -39,7 +45,8 @@ const profile = {
                     img: [ "img5.jpg", "img6.jpg" ],
                     likes: 150,
                     dislikes: 2,
-                    link: "geniuscodeeditor.com"
+                    link: "geniuscodeeditor.com",
+                    tags:["ios"]
                 }
             ]    
         },
@@ -48,6 +55,10 @@ const profile = {
             name: "Supercell",
             username: "oldsuperuser",
             bio: "cse student learning android games",
+            thread:[
+                {title:"I need someone to help in me in my android project",
+                }
+            ],
             project:[
                 {
                     projectId: 1,
@@ -59,7 +70,8 @@ const profile = {
                     img: [ "img1.jpg", "img2.jpg" ],
                     likes: 120,
                     dislikes: 3,
-                    link: "coc.com"
+                    link: "coc.com",
+                    tags:["web", "html", "css"]
                 },
                 {
                     projectId: 2,
@@ -71,7 +83,8 @@ const profile = {
                     img: [ "img3.jpg", "img4.jpg" ],
                     likes: 85,
                     dislikes: 5,
-                    link: "binaryadventure.com"
+                    link: "binaryadventure.com",
+                    tags:["android", "java"]
                 }
             ]    
         }
@@ -155,22 +168,14 @@ app.patch("/profile/:userName",(req,res)=>{
 // GET valid routes
 app.get("/*", (req,res)=>{
     res.send("You are on wrong route. Select Valid route")
-})
+});
 
-// // Community Routes
-// app.get('/community/explore', (req,res)=>{
-//     res.send("Search for devs")
-// })
-
-// app.get('/community/discuss', (req,res)=>{
-//     res.send("This is faq section")
-// })
-
-
-// app.get('/categories', (req,res)=>{
-//     res.send("This is selecto from categories")
-// })
+//----------------Community---------------//
+app.post('/community/threads', (req,res)=>{
+    const allThreads = profile.apexUsers.flatMap(user => user.thread);
+    res.json({ threads: allThreads });
+});
 
 app.listen(port,()=>{
     console.log(`Server running at http://localhost:${port}/`);
-})
+});
