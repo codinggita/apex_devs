@@ -165,16 +165,45 @@ app.patch("/profile/:userName",(req,res)=>{
     res.send("Profile Updated");
 });
 
+
+//----------------Community---------------//
+
+app.get('/community/threads', (req,res)=>{
+    const allThreads = [];
+    profile.apexUsers.forEach(user => {
+        if (user.thread && Array.isArray(user.thread)) {
+            allThreads.push(...user.thread);
+        }
+    });
+
+    // Return the array of all threads
+    res.json(allThreads);
+});
+
+app.post('/community/threads/:userName',(req,res)=>{
+    const userName = req.params.userName
+    const threadPost = req.body
+
+    const apexUser = profile.apexUsers.find((user)=>user.username===userName)
+
+    if(!apexUser){
+        return res.status(404).json({error: "User Not Found"})
+    }
+    if(!apexUser.thread){
+        apexUser.thread = []
+    }
+
+    apexUser.thread.push(threadPost)
+
+    res.json(`Thread added in ${apexUser.username} threads.`)
+
+});
+
 // GET valid routes
 app.get("/*", (req,res)=>{
     res.send("You are on wrong route. Select Valid route")
 });
 
-//----------------Community---------------//
-app.post('/community/threads', (req,res)=>{
-    const allThreads = profile.apexUsers.flatMap(user => user.thread);
-    res.json({ threads: allThreads });
-});
 
 app.listen(port,()=>{
     console.log(`Server running at http://localhost:${port}/`);
