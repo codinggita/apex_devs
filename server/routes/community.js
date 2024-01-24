@@ -1,17 +1,6 @@
 import express from "express";
-import bodyParser from "body-parser";
-import profileRoutes from "./routes/profile.js"
-import communityRoutes from "./routes/community.js"
+const router = express.Router();
 
-
-const app = express();
-const port = 3000;
-
-//Middleware to parse JSON in request
-app.use(bodyParser.json())
-app.use(express.json())
-
-// Database
 const profile = {
     apexUsers:[
         {
@@ -94,21 +83,35 @@ const profile = {
     ]
 }
 
+router.get('/community/threads', (req, res) => {
+    const allThreads = [];
+    profile.apexUsers.forEach(user => {
+        if (user.thread && Array.isArray(user.thread)) {
+            allThreads.push(...user.thread);
+        }
+    });
 
-
-// GET PROFILE
-app.use("/", profileRoutes)
-
-// COMMUNITY
-app.use("/", communityRoutes );
-
-
-// GET valid routes
-app.get("/*", (req,res)=>{
-    res.send("You are on wrong route. Select Valid route")
+    // Return the array of all threads
+    res.json(allThreads);
 });
 
+router.post('/community/threads/:userName', (req, res) => {
+    const userName = req.params.userName;
+    const threadPost = req.body;
 
-app.listen(port,()=>{
-    console.log(`Server running at http://localhost:${port}/`);
+    const apexUser = profile.apexUsers.find((user) => user.username === userName);
+
+    if (!apexUser) {
+        return res.status(404).json({ error: "User Not Found" });
+    }
+
+    if (!apexUser.thread) {
+        apexUser.thread = [];
+    }
+
+    apexUser.thread.push(threadPost);
+
+    res.json(`Thread added in ${apexUser.username} threads.`);
 });
+
+export default router;
