@@ -1,16 +1,14 @@
 import mongoose from "mongoose";
 // import config from "./config_file";
 
-const CONNECTION_URL = "mongodb://localhost:27017/apexdevs";
-const port = 8000
+const CONNECTION_URL =
+  "mongodb+srv://apexdev:temppass@apexcluster.jwousrz.mongodb.net/ ?retryWrites=true&w=majority";
 
 mongoose
-  .connect(CONNECTION_URL, 
-    {
+  .connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  }
-  )
+  })
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => {
     console.error("Error connecting to MongoDB:", err);
@@ -18,6 +16,6 @@ mongoose
   });
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error'));
+db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 export default mongoose;
