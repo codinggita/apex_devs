@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="client/assets/ApexDevs_Logo_Temp.png" height="300" width="300">
+  <img src="client/assets/ApexDevs_Logo_Temp.png" height="250" width="280">
 </p>
 <p align="center">
   <img src="client/assets/ApexDevs_Banner.png"></p>
@@ -38,6 +38,10 @@ Link for API documentation: https://documenter.getpostman.com/view/32332304/2s9Y
   <img src="client/assets/ApiOR.png" height="150" width="150">
 </p>
 <br>
+
+## Class test link
+Render link: https://studenttest.onrender.com/students
+Github link: https://github.com/laveesh21/mern_bootcamp_test.git
 
 ### Tech Stack Used
 ![Logo](https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white)![Logo](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white)![Logo](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)![Logo](https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white)![Logo](https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white)![Logo](https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=MongoDB&logoColor=white)
