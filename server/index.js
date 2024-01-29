@@ -10,14 +10,9 @@ app.use(express.json())
 
 database;
 
-// GET PROFILE
 app.use("/", profileRoutes)
-
-// COMMUNITY
 // app.use("/", communityRoutes );
 
-
-// GET valid routes
 app.get("/*", (req,res)=>{
     res.send("You are on wrong route. Select Valid route")
 });
