@@ -1,0 +1,61 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 50px;
+  background-color: #000000; /* Light gray background */
+  /* border-bottom: 1px solid #ccc; Bottom border */
+  color: aliceblue;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+}
+
+.apex{
+  font-size: 30px;
+  color: white;
+  
+}
+.devs{
+  font-size: 30px;
+  color: #00BF62;
+}
+
+.nav-content ul {
+  list-style: none;
+}
+
+.nav-content li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.nav-content li a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.nav-content li a:hover {
+  color: #00BF62; /* Blue hover color */
+}
+
+.side-tools {
+  display: flex;
+  align-items: center;
+}
+
+.userIcon {
+  height: 40px;
+  width: 40px;
+  border: 1.2px solid white;
+  border-radius: 50px;
+
+}

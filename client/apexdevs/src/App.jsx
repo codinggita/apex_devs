@@ -1,21 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import NavBar from './components/NavBar/NavBar'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './components/dashboard/Navbar';
+import Footer from './components/dashboard/Footer';
+import HomePage from './components/dashboard/HomePage';
+// import SuperNav from './components/SuperNav';
+import Community from './components/dashboard/Community';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <NavBar />
-      <div className="content">
-        {/* Other content goes here */}
-        <h1>Welcome to my website!</h1>
-        <p>This is the main content of your application.</p>
-      </div>
-    </div>
+      <>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/community" element={<Community />} />
+        </Routes>
+        <Footer/>
+      </>
+
   )
 }
 
