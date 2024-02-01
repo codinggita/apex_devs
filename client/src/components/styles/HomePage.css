@@ -1,0 +1,11 @@
+.super-container{
+    background-color: rgb(145, 145, 145);
+    width: 100%;
+    height: 100vh;
+}
+
+.side-bar{
+    background-color: black;
+    height: 120vh;
+    width: 20%;
+}
