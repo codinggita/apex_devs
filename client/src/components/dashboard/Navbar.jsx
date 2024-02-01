@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import "../styles/Navbar.css"
 import userIcon from '../../assets/userIcon.png'
+import { FaRegUserCircle } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -9,6 +10,7 @@ function Navbar() {
         <div className='nav'>
 
             <div className='logo'>
+                <img src="../../assets/ApexDevs_Logo_Temp.png" alt="" />
                 <h1 className='apex'>APEX</h1>
                 <h1 className='devs'>DEVS</h1>
             </div>
@@ -27,7 +29,7 @@ function Navbar() {
                 </div>
                 <div className='userIcon'>
                     <Link to="/profile">
-                        <img src={userIcon} alt="User Icon" className="userIcon" />
+                        <FaRegUserCircle />
                     </Link>
                 </div>
             </div>
