@@ -2,7 +2,7 @@ import React from 'react'
 import "../styles/HomePage.css"
 //import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import SideNavBar from '../dashboard/SideNavBar'
+// import SideNavBar from '../dashboard/SideNavBar'
 import SidebarElement from '../mini/SidebarElement'
 import RecipeReviewCard from '../mini/ProjectCard'
 

@@ -14,7 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import NetflixImage from '../../../assets/Netflix.png'
+import NetflixImage from '../../assets/Netflix.png'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -34,21 +34,27 @@ export default function RecipeReviewCard() {
     setExpanded(!expanded);
   };
 
+  const textColor = 'white'
+  const textColorGrey = '#7E7E7E'
+  const apexGreen = '#00BF63'
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 , backgroundColor:'rgb(36, 36, 36)', color:'white'}}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
             R
           </Avatar>
         }
-        action={
+        action={  
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
+        subheaderTypographyProps= {{color: {textColorGrey}}}
+        // style={{color: {textColor}}}
       />
       <CardMedia
         component="img"

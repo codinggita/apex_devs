@@ -28,12 +28,22 @@
     width: 50%;
     margin-left: 50px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
 }
 
-.profile-card-name-container{
-    border:2px solid white;
+.profile-card-container{
+    /* border:2px solid white; */
     width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    /* justify-content:space-around; */
+
+}
+
+.profile-card-name-container {
+    width: 50%;
 }
 
 .profile-card-name{
@@ -45,4 +55,12 @@
     color: rgb(165, 165, 165);
     /* color: red; */
     font-size: 20px;
+}
+
+.profile-card-popularity{
+    /* border: 2px solid white; */
+    font-size: 20px;
+    width: 50% ;
+    font-weight: 700;
+    
 }
