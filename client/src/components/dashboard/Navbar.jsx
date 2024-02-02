@@ -29,7 +29,9 @@ function Navbar() {
                 </div>
                 <div className='userIcon'>
                     <Link to="/profile">
-                        <FaRegUserCircle />
+                        <FaRegUserCircle
+                            size={35}
+                        />
                     </Link>
                 </div>
             </div>
