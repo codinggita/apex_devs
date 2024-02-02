@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="client/assets/ApexDevs_Logo_Temp.png" height="250" width="280">
+  <img src="client/src/assets/ApexDevs_Logo_Temp.png" height="250" width="280">
 </p>
 <p align="center">
-  <img src="client/assets/ApexDevs_Banner.png"></p>
+  <img src="client/src/assets/ApexDevs_Banner.png"></p>
 <p align="center">For Developers By Developers</p><br>
 
 ## Introduction 
@@ -28,14 +28,14 @@ It just makes it easy for developers to stay in touch with each other and get a 
 ## Figma Design
 Here is link for figma design: https://www.figma.com/file/6WfLDI72EuPpJsZ9hhTWUV/ApexDevs.club?type=design&node-id=0%3A1&mode=design&t=LliCU73QTUpdVVyP-1
 <p align="center">
-  <img src="client/assets/FigmaQR.png" height="150" width="150">
+  <img src="client/src/assets/FigmaQR.png" height="150" width="150">
 </p>
 
 
 ## API Documentation
 Link for API documentation: https://documenter.getpostman.com/view/32332304/2s9YymHQJc
 <p align="center">
-  <img src="client/assets/ApiOR.png" height="150" width="150">
+  <img src="client/src/assets/ApiOR.png" height="150" width="150">
 </p>
 <br>
 
