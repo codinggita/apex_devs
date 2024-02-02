@@ -73,7 +73,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 6rem;
     flex-basis: 10%;
 
 }

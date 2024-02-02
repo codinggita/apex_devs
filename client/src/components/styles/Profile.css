@@ -8,8 +8,10 @@
 
 .profile-card{
     margin: 40px 0;
-    width: 50%;
-    height: 35vh;
+    width: 90%;
+    max-width: 800px;
+    height: 28%;
+    
     /* border: 2px solid rgb(217, 217, 217); */
     background-color: rgb(36, 36, 36);
     border-radius: 25px;
@@ -19,7 +21,9 @@
 }
 
 .profile-card-pic img{
-    border-radius: 100%;
+    border-radius: 50%;
+    max-height: 11rem;
+
 }
 
 .profile-card-info{
@@ -63,4 +67,49 @@
     width: 50% ;
     font-weight: 700;
     
+}
+
+@media only screen and (max-width: 768px) {
+    .profile-card {
+        width: 90%;
+        height: 20%;
+    }
+
+    .profile-card-pic img {
+        max-width: 120px;
+    }
+
+    .profile-card-name {
+        font-size: 20px;
+    }
+
+    .profile-card-username {
+        font-size: 14px;
+    }
+
+    .profile-card-bio {
+        font-size: 12px;
+    }
+
+
+}@media only screen and (max-width: 768px) {
+    .profile-card {
+        width: 90%;
+    }
+
+    .profile-card-pic img {
+        max-width: 120px;
+    }
+
+    .profile-card-name {
+        font-size: 20px;
+    }
+
+    .profile-card-username {
+        font-size: 14px;
+    }
+
+    .profile-card-bio {
+        font-size: 12px;
+    }
 }

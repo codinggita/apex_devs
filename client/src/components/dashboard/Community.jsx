@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/Community.css'
-import Input from '@mui/material/Input';
+import ThreadCard from '../microComponent/ThreadCard'
 
 function Community() {
   return (
@@ -29,8 +29,12 @@ function Community() {
         </div>
       </div>
 
-      <div className='threads'>
-        <Input></Input>
+      <div className='community-body-container'>
+        <ThreadCard/>
+        <ThreadCard/>
+        <ThreadCard/>
+        <ThreadCard/>
+        <ThreadCard/>
       </div>
 
       </div>

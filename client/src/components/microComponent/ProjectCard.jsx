@@ -53,7 +53,7 @@ export default function RecipeReviewCard() {
         }
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
-        subheaderTypographyProps= {{color: {textColorGrey}}}
+        subheaderTypographyProps= {{color: {textColor}}}
         // style={{color: {textColor}}}
       />
       <CardMedia
@@ -62,28 +62,32 @@ export default function RecipeReviewCard() {
         image= {NetflixImage}
         alt="Paella dish"
       />
+
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color='white'>
           This is netflix app made by flutter framework using dart language
         </Typography>
       </CardContent>
+
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <FavoriteIcon style={{color: textColorGrey}} />
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon />
+          <ShareIcon style={{color: textColorGrey}}/>
         </IconButton>
-        <ExpandMore
+        
+        {/* <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <ExpandMoreIcon />
-        </ExpandMore>
+          <ExpandMoreIcon style={{color: textColorGrey}}/>
+        </ExpandMore> */}
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+
+      {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>
@@ -92,7 +96,7 @@ export default function RecipeReviewCard() {
           </Typography>
 
         </CardContent>
-      </Collapse>
+      </Collapse> */}
     </Card>
   );
 }
