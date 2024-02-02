@@ -9,12 +9,13 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
+import { blue, red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { ImageList } from '@mui/material';
+// import  '../../assets/trash/Netflix_UI_for_Web'
+// import userIcon from '../../assets/userIcon.png'
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -40,9 +41,12 @@ export default function RecipeReviewCard() {
 
   return (
     <Card sx={{ maxWidth: 345, backgroundColor: '#313131'}}>
+
+      {/* HEADER */}
       <CardHeader
         avatar={
-          <Avatar sx={{ background: 'URL(../../assets/images.png)'}} aria-label="recipe">
+          <Avatar sx={{ bgcolor: "#00BF62" }} aria-label="recipe">
+            R
           </Avatar>
         }
         action={
@@ -50,18 +54,21 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="apex_user_123"
+        subheader="September 14, 2020"
         style={{color: "white"}}
       />
+
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image="https://picsum.photos/200/300"
         alt="Paella dish"
+        style={{color: "white"}}
       />
+
       <CardContent>
-        <Typography variant="body2" color="white">
+        <Typography variant="body2" color="#B0B0B0">
           This impressive paella is a perfect party dish and a fun meal to cook
           together with your guests. Add 1 cup of frozen peas along with the mussels,
           if you like.

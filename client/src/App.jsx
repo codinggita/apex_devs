@@ -15,7 +15,7 @@ function App() {
 
   return (
       <>
-        <Navbar/>
+        <div className="super-nav-bar"><Navbar/></div>  
         {/* <ResponsiveAppBar/> */}
         <Routes>
           <Route path="/" element={<><HomePage /></>} />

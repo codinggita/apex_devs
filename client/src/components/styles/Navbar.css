@@ -65,10 +65,6 @@
   align-items: center;
 }
 
-.userIcon {
-  height: 40px;
-  width: 40px;
-  /* border: 2px solid white; */
-  border-radius: 50px;
-
+.userIcon{
+  padding-top: 8px;
 }
