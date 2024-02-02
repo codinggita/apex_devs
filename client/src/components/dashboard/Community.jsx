@@ -30,6 +30,7 @@ function Community() {
       </div>
 
       <div className='community-body-container'>
+
         <ThreadCard/>
         <ThreadCard/>
         <ThreadCard/>

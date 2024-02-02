@@ -6,10 +6,12 @@
 }
 
 .community-body-container{
-    border: 2px solid white;
+    /* border: 2px solid white; */
+    margin: 7%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5%;
     /* justify-content: center; */
 }
