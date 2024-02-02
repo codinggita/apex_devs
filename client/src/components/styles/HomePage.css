@@ -13,7 +13,7 @@
 
 
 .side-bar{
-    padding: 20px 0 20px 50px;
+    padding: 20px 50px ;
     background-color: rgb(27, 27, 27);
     /* height: 120vh; */
     width: 12%;
@@ -28,22 +28,23 @@
     margin: 50px 0;
 } */
 
-.nav-bar-block{
-    margin: 10px 0;
-}
-
-.categories-side-bar{
-    margin: 50px 0;
-}
-
 .side-bar-block h3{
+    /* border-top: 1px solid rgb(53, 53, 53); */
     font-size: 20px;
     font-weight: 600;
-    /* border-top: 1px solid rgb(53, 53, 53); */
     border: 20%;
     padding: 4px 0;
     
 }
+
+.nav-side-bar{
+    margin: 40px 0;
+}
+
+.categories-side-bar{
+    margin: 100px 0;
+}
+
 
 /* __________BODY___________ */
 
@@ -72,7 +73,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 6rem;
     flex-basis: 10%;
 
 }

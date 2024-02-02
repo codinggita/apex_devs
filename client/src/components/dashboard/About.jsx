@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/About.css'
+import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png'
 
 function About() {
   return (
@@ -10,7 +11,7 @@ function About() {
       {/* LOGO */}
       <div className='about-logo'>
         <div className='about-logo-img'>
-          <img src='../../assets/ApexDevs_Logo_Temp.png'></img>
+          <img src={ApexLogo}></img>
         </div>
         <div className='about-logo-text'>
           <div className='about-logo-text-apex'>APEX</div>

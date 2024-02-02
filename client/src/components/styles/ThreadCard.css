@@ -1,0 +1,9 @@
+.thread-container{
+    padding: 1rem;
+    /* border: 2px solid white; */
+    background-color: rgb(27, 27, 27);
+    height: auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 10px;
+}
