@@ -90,26 +90,18 @@
     .profile-card-bio {
         font-size: 12px;
     }
+}
 
-
-}@media only screen and (max-width: 768px) {
-    .profile-card {
-        width: 90%;
-    }
-
-    .profile-card-pic img {
-        max-width: 120px;
-    }
-
-    .profile-card-name {
-        font-size: 20px;
-    }
-
-    .profile-card-username {
-        font-size: 14px;
-    }
-
-    .profile-card-bio {
-        font-size: 12px;
-    }
+.profile-achivement-container{
+    width: 90%;
+    max-width: 800px;
+    /* height: 60%; */
+    background-color: rgb(36, 36, 36);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+    /* justify-content: center; */
 }

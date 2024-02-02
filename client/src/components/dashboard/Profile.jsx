@@ -1,9 +1,11 @@
 import React from 'react'
 import '../styles/Profile.css'
+import AchivementTab from '../microComponent/AchivementTab'
 import profileImage from "../../assets/images.png"
 
 const profileName = "Apex User"
 const profileUsername = "apex_user_123"
+
 
 function Profile() {
   return (
@@ -29,6 +31,16 @@ function Profile() {
               </div>
           </div>
           
+        </div>
+
+        <div className='profile-achivement-container'>
+          <div className='profile-achivement-text'>
+            <h3>Achivements</h3>
+          </div>
+          <AchivementTab/>
+          <AchivementTab/>
+          <AchivementTab/>
+          <AchivementTab/>
         </div>
 
       </div>

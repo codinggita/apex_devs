@@ -1,0 +1,28 @@
+.achivement-container{
+    /* border: 2px solid white; */
+    background-color: rgb(58, 58, 58);
+    width: 700px;
+    height: 100px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.achivement-text-container{
+    /* border: 2px solid rgb(255, 69, 69); */
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.achivemnet-logo{
+    /* border: 2px solid white; */
+    margin-left: 2%;
+    width: 100px;
+}
+
+.achivemnet-logo img{
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
