@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "../styles/Navbar.css"
-import userIcon from '../../assets/userIcon.png'
+// import userIcon from '../../assets/userIcon.png'
 import { FaRegUserCircle } from "react-icons/fa";
 
 function Navbar() {

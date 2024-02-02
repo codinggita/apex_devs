@@ -10,5 +10,39 @@
     margin: 40px 0;
     width: 50%;
     height: 35vh;
-    border: 2px solid rgb(217, 217, 217);
+    /* border: 2px solid rgb(217, 217, 217); */
+    background-color: rgb(36, 36, 36);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card-pic img{
+    border-radius: 100%;
+}
+
+.profile-card-info{
+    /* border: 2px solid white; */
+    height: 60%;
+    width: 50%;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-card-name-container{
+    border:2px solid white;
+    width: 100%;
+}
+
+.profile-card-name{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.profile-card-username{
+    color: rgb(165, 165, 165);
+    /* color: red; */
+    font-size: 20px;
 }

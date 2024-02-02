@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/HomePage.css"
-import Card from '@mui/material/Card';
+//import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import SideNavBar from '../dashboard/SideNavBar'
 import SidebarElement from '../mini/SidebarElement'
@@ -28,7 +28,7 @@ function HomePage() {
                 <h3>MyProjects</h3>
               </div>
               <div className='categories-side-bar side-bar-block'>
-                <h2>Catogries</h2>
+                <h2>Categories</h2>
                 <div className='side-bar-breakline'></div>
                 <h3>Web</h3>
                 <h3>Android</h3>
