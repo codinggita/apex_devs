@@ -11,6 +11,7 @@ function SignUp() {
           <div className="signup-form">
             <label htmlFor="username">Username:</label>
             <input type="text" className="signup-input" name="Username" required />
+            {/* <i className="bx bxs-user-circle"></i> */}
           </div>
 
           <div className="signup-form">
@@ -18,9 +19,9 @@ function SignUp() {
             <input type="text" className="signup-input" id="emailInput" name="Email" required />
           </div>
 
-          <div className="signup-pass">
+          <div className="signup-form">
             <label htmlFor="password">Password:</label>
-            <input type="password" id="passwordInput" name="Password" required />
+            <input type="password" className='signup-input' id="passwordInput" name="Password" required />
           </div>
 
           <div className="signup-terms">
