@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "../styles/Navbar.css"
 import { FaRegUserCircle } from "react-icons/fa";
 import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png'
+import "../styles/Navbar.css"
 
 function Navbar() {
   return (
@@ -26,10 +26,10 @@ function Navbar() {
             <div className='side-tools'>
 
                 <div className='log-button'>
-                    <Link to='/log_in'>
+                    <Link to='/login'>
                         <button className='button-login'>Log in</button>
                     </Link>
-                    <Link to='/sign_up'>
+                    <Link to='/signup'>
                     <button className='button-signin'>Sign Up</button>
                     </Link>
                 </div>

@@ -6,7 +6,8 @@ import HomePage from './components/dashboard/HomePage';
 import Community from './components/dashboard/Community';
 import About from './components/dashboard/About';
 import Profile from './components/dashboard/Profile'
-import LogIn from './components/dashboard/LogIn';
+// import LogIn from './components/dashboard/LogIn';
+// import SignUp from './components/dashboard/SignUp';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,7 +20,8 @@ function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/about" element={<About/>}/>
           <Route path="/profile" element={<Profile/>}/>
-          <Route path="/log_in" element={<LogIn/>}/>
+          {/* <Route path="/log_in" element={<LogIn/>}/> */}
+          {/* <Route path='/sign_up' element={<SignUp/>}/> */}
         </Routes>
       </>
 
