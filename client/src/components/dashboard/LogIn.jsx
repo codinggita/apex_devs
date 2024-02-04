@@ -1,60 +1,84 @@
 import React from 'react';
+import '../styles/LogIn.css';
 
 function LogIn() {
   return (
-    <div className="login-container">
-      <form action="#"> {/* Provide a valid action URL for form submission */}
-        <h1>Login</h1>
-        <div className="login-form">
-          <input
-            type="text"
-            placeholder="Username"
-            className="inputClass"
-            id="usernameInput"
-            required
-          />
-          <i className="bx bxs-user-circle"></i>
-        </div>
-        <div className="login-password"> {/* Added descriptive class name */}
-          <input
-            type="password"
-            placeholder="Password"
-            className="inputClass"
-            id="userpassInput"
-            required
-          />
-          <i className="bx bxs-lock-alt"></i>
-        </div>
-        <div className="remember-forgot">
-          <label htmlFor="rememberMe">
+    <>
+    <div className='login-body'>
+      <div className="login-container">
+        <h1>Log in</h1>
+
+        <form action="#">
+          <div className="login-form">
             <input
-              type="checkbox"
-              id="rememberMe"
+              type="text"
+              placeholder="Username"
+              className="inputClass"
+              id="usernameInput"
+              required
             />
-            Remember me
-          </label>
-          <a href="#">Forgot password?</a>
-        </div>
-        <button type="submit" className="btn">Login</button>
-        <div className="register-link">
-          Don't have an account? <a href="SignUp.html">Register</a>
-        </div>
-      </form>
-    </div>
+            <i className="bx bxs-user-circle"></i>
+          </div>
+          <div className="login-form">
+            {/* Correct the typo here */}
+            <input
+              type="password"
+              placeholder="Password"
+              className="inputClass"
+              id="userpassInput"
+              required
+            />
+            <i className="bx bxs-lock-alt"></i>
+          </div>
+          <div className="remember-forgot">
+            <label htmlFor="rememberMe">
+              <input
+                type="checkbox"
+                id="rememberMe"
+              />
+              Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button type="submit" className="btn">
+            Login
+          </button>
+          <div className="register-link">
+            Don't have an account? <a href="SignUp.html">Register</a>
+          </div>
+        </form>
+        
+      </div>
+      </div>
+    </>
   );
 }
 
-const usernameInput = document.getElementById("usernameInput");
 
-function addNeonBorder() {
-    usernameInput.classList.add("neon-border");
-}
+// const usernameInput = document.getElementById("usernameInput");
+// const userpassInput = document.getElementById("userpassInput");
 
-function removeNeonBorder() {
-    usernameInput.classList.remove("neon-border");
-}
+// function addNeonBorderUsername() {
+//     usernameInput.classList.add("neon-border");
+// }
 
-usernameInput.addEventListener("focus", addNeonBorder);
-usernameInput.addEventListener("blur", removeNeonBorder);
+// function removeNeonBorderUsername() {
+//     usernameInput.classList.remove("neon-border");
+// }
+
+// function addNeonBorderPassword() {
+//     userpassInput.classList.add("neon-border");
+// }
+
+// function removeNeonBorderPassword() {
+//     userpassInput.classList.remove("neon-border");
+// }
+
+// usernameInput.addEventListener("focus", addNeonBorderUsername);
+// usernameInput.addEventListener("blur", removeNeonBorderUsername);
+
+// userpassInput.addEventListener("focus", addNeonBorderPassword);
+// userpassInput.addEventListener("blur", removeNeonBorderPassword);
+
 
 export default LogIn;

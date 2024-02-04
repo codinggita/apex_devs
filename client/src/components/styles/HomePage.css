@@ -77,3 +77,7 @@
     flex-basis: 10%;
 
 }
+
+.home-body-grid a{
+    text-decoration: none;
+}

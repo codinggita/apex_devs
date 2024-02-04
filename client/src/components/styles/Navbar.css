@@ -66,16 +66,18 @@
 
 .userIcon{
   padding-top: 8px;
+  margin-left: 20px;
 }
 
 .log-button button{
-  margin: 0 20px;
+  margin: 0 10px;
   background-color: #00BF62;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 600;
+  color: rgb(37, 37, 37);
 }
 
 
