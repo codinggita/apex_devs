@@ -26,10 +26,10 @@ function Navbar() {
             <div className='side-tools'>
 
                 <div className='log-button'>
-                    <Link to='/login'>
+                    <Link to='/log_in'>
                         <button className='button-login'>Log in</button>
                     </Link>
-                    <Link to='/signup'>
+                    <Link to='/sign_up'>
                     <button className='button-signin'>Sign Up</button>
                     </Link>
                 </div>
@@ -47,5 +47,7 @@ function Navbar() {
     </div>
   )
 }
+
+
 
 export default Navbar
