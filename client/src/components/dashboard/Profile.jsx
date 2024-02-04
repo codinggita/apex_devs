@@ -33,14 +33,16 @@ function Profile() {
           
         </div>
 
-        <div className='profile-achivement-container'>
-          <div className='profile-achivement-text'>
+        <div className='profile-achievement-container'>
+          <div className='profile-achievement-text'>
             <h3>Achivements</h3>
           </div>
-          <AchivementTab/>
-          <AchivementTab/>
-          <AchivementTab/>
-          <AchivementTab/>
+          <div className='profile-achievements-bars'>
+            <AchivementTab/>
+            <AchivementTab/>
+            <AchivementTab/>
+            <AchivementTab/>
+          </div>
         </div>
 
       </div>

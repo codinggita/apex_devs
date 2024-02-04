@@ -24,9 +24,16 @@ function Navbar() {
             </div>
 
             <div className='side-tools'>
-                <div className="search">
 
+                <div className='log-button'>
+                    <Link to='/log_in'>
+                        <button className='button-login'>Log in</button>
+                    </Link>
+                    <Link to='/sign_up'>
+                    <button className='button-signin'>Sign Up</button>
+                    </Link>
                 </div>
+
                 <div className='userIcon'>
                     <Link to="/profile">
                         <FaRegUserCircle

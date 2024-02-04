@@ -16,7 +16,6 @@
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .logo img{
@@ -69,11 +68,72 @@
   padding-top: 8px;
 }
 
+.log-button button{
+  margin: 0 20px;
+  background-color: #00BF62;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+
 @media only screen and (max-width: 768px) {
 
   .nav-content{
     display: flex;
     flex-direction: column;
+  }
+
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .nav {
+    padding: 0 20px;
+  }
+
+  .logo img{
+    margin-bottom: 10px;
+    height: 7vw;
+    width: 7vw;
+    margin-right: 2vw;
+  }
+
+  .apex{
+    font-size: 5vw;
+  }
+  .devs {
+    font-size: 5vw;
+  }
+
+  .nav-content {
+    width: 60%;
+
+  }
+
+  .nav-content ul {
+    flex-direction: column;
+    align-items: center;
+  
+  }
+
+  .nav-content li{
+    margin-right: 0px;
+  }
+
+  .nav-content ul li a{
+    /* margin: 5px 0; */
+    font-size: 12px;
+
+  }
+
+  .side-tools {
+    margin-top: 10px;
   }
 
 }
