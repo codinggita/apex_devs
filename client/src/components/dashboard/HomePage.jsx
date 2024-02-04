@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styles/HomePage.css"
+import { Link } from 'react-router-dom';
 import CardContent from '@mui/material/CardContent';
 import RecipeReviewCard from '../microComponent/ProjectCard'
 
@@ -38,15 +39,15 @@ function HomePage() {
           <div className='home-body'>
             <div className='home-category'>{homeCategory}</div>
             <div className='home-body-grid'>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
+              <Link to='/project'><RecipeReviewCard/></Link>
+              <Link to='/project'><RecipeReviewCard/></Link>
+              <Link to='/project'><RecipeReviewCard/></Link>
+              <Link to='/project'><RecipeReviewCard/></Link>
+              <Link to='/project'><RecipeReviewCard/></Link>
+              <Link to='/project'><RecipeReviewCard/></Link>
+              <Link to='/project'><RecipeReviewCard/></Link>
+              <Link to='/project'><RecipeReviewCard/></Link>
+              <Link to='/project'><RecipeReviewCard/></Link>
             </div>
           </div>
       </div>
