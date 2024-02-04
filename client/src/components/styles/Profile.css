@@ -92,16 +92,27 @@
     }
 }
 
-.profile-achivement-container{
+/* ACHIVEMENTS */
+
+.profile-achievement-container{
+    /* border: 2px solid white; */
     width: 90%;
     max-width: 800px;
-    /* height: 60%; */
     background-color: rgb(36, 36, 36);
     border-radius: 25px;
+    padding: 30px 50px 50px 50px;
+}
+.profile-achievement-text h3{
+    /* border: 2px solid white; */
+    margin-bottom: 4%;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.profile-achievements-bars{
+    /* border: 2px solid white; */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    gap: 30px;
-    /* justify-content: center; */
+    gap: 20px;
+    width: 100%;
 }
