@@ -31,7 +31,7 @@ function SignUp() {
                 id="agreement"
                 name="agreement"
               />
-              I agree to the terms and conditions.
+              I agree to the <a href='https://google.com'>terms and conditions.</a>
             </label>
           </div>
 
