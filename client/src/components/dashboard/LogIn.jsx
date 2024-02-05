@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/LogIn.css';
 
 function LogIn() {
@@ -38,13 +39,13 @@ function LogIn() {
               />
               Remember me
             </label>
-            <a href="#">Forgot password?</a>
+            <Link to='/forgot_password'>Forgot password?</Link>
           </div>
           <button type="submit" className="btn">
             Login
           </button>
           <div className="register-link">
-            Don't have an account? <a href="SignUp.html">Register</a>
+            Don't have an account? <Link to="/sign_up">Register</Link>
           </div>
         </form>
         
