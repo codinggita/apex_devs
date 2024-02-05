@@ -25,10 +25,6 @@
     font-weight: 400;
 }
 
-    /* .side-bar-block{
-        margin: 50px 0;
-    } */
-
 .side-bar-block h3{
     /* border-top: 1px solid rgb(53, 53, 53); */
     font-size: 20px;
@@ -47,7 +43,7 @@
 }
 
 
-/* __________BODY___________ */
+/*----------------BODY---------------*/
 
 .home-body{
     height: 100vh;
@@ -91,3 +87,4 @@
     .home-body-grid {
       flex-wrap: wrap;
   }
+}
