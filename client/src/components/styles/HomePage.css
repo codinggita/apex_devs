@@ -55,7 +55,7 @@
 
 .home-category{
     /* border: 2px solid rgb(245, 245, 245); */
-    width: 85%;
+    width: 80%;
     height: 100px;
     padding: 30px 0;
     padding-left: 5.7%;
@@ -64,7 +64,7 @@
 }
 
 .home-body-grid{
-    border: 2px solid white;
+    /* border: 2px solid white; */
     width: 90%;
     height: 100%;
     display: flex;
@@ -78,13 +78,15 @@
 .home-body-grid a{
     text-decoration: none;
     flex: 0 0 auto;
-    /* border: 2px solid white; */
-    /* height: 18%; */
 }
 
 
 @media (max-width: 768px) {
-    .home-body-grid {
-      flex-wrap: wrap;
-  }
+    .side-bar{
+        padding: 20px 40px ;
+        background-color: rgb(27, 27, 27);
+        height: 120vh;
+        width: 200px;
+        /* position: fixed; */
+    }
 }
