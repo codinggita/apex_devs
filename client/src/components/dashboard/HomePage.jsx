@@ -10,8 +10,9 @@ function HomePage() {
   return (
     <div>
       <div className='super-container'>
+        
 
-          {/* SIDE BAR */}
+          {/* -------------SIDE BAR--------- */}
           <div className='side-bar'>
 
               <div className='nav-side-bar side-bar-block'>
@@ -34,8 +35,10 @@ function HomePage() {
                 <h3>C/C++</h3>
               </div>
           </div>
+          {/*--------------------------------------*/}
 
           
+          {/* -----------------BODY--------------- */}
           <div className='home-body'>
             <div className='home-category'>{homeCategory}</div>
             <div className='home-body-grid'>
@@ -50,6 +53,9 @@ function HomePage() {
               <Link to='/project'><RecipeReviewCard/></Link>
             </div>
           </div>
+          {/* --------------------------------------- */}
+
+
       </div>
     </div>
   )

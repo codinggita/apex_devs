@@ -6,7 +6,7 @@ import "../styles/Navbar.css"
 
 function Navbar() {
   return (
-    <div>
+    <div className='super-nav'>
         <div className='nav'>
 
             <div className='logo'>

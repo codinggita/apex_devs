@@ -8,15 +8,15 @@
 } */
 
 .login-body {
-    width: 100%;
+    min-width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    /* background: url(img08.jpg) no-repeat; */
     color: white;
     background-size: cover;
     background-position: center;
+    /* background: url(img08.jpg) no-repeat; */
 }
 
 .login-container{
@@ -24,9 +24,9 @@
     padding: 30px 40px;
     border-radius: 10px;
     background: transparent;
-    border: 2px solid rgb(255, 255, 255);
+    border: 3px solid rgb(255, 255, 255);
     backdrop-filter: blur(20px);
-    /* box-shadow: 0 0 35px #00BF62; */
+    /* box-shadow: 0 0 15px #00BF62; */
 }
 
 .login-container h1{
@@ -70,7 +70,8 @@
 }
 
 
-/* REMEMBER AND FORGOT SECTION */
+/*----REMEMBER AND FORGOT SECTION ----*/
+
 .remember-forgot{
     font-size: 14px;
     display: flex;
@@ -78,25 +79,22 @@
     margin: -15px 0 15px; 
     color: white;
 }
-.remember-forgot label input{
-    accent-color: rgb(255, 255, 255);
+.remember-forgot label input[type="checkbox"]{
+    accent-color: #00BF62;
     margin: 0 10px 0 5px;
+    transform: scale(1.2); 
+    /* height: 20px; */
 }
+
 .remember-forgot a{
     color: white;
     text-decoration: none;
 }
 .remember-forgot a:hover{
-    color:#00BF62;
+    /* color:#00BF62; */
     text-decoration: underline;
 }
-/* REMEMBER AND FORGOT SECTION */
-
-
-/* --------------------SIGNUP PAGE CSS----------------- */
-
-
-
+/*----------------------------------*/
 
 .login-container .btn{
     width: 100%;
@@ -129,9 +127,9 @@
     text-decoration: underline;
 }
 
-.neon-border{
-    border: 3px solid #fbfbfb;
-    box-shadow: 0 0 15px #08c5ff;
+.inputClass:focus{
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 15px #00BF62;
     border-radius: 30px;
 }
 
