@@ -34,12 +34,18 @@ function Project() {
                     </div>
                 </div>
 
-                {/* PROJECT ABOUT */}
 
+                {/* PROJECT FOLLOW BAR*/}
                 <div className='project-wishlish-bar'>
                     <div className='project-wishlist-title'>You can save this project to your list and can also follow developer</div>
                     <button className="saved button">Save</button>
                     <button className="follow button">Follow</button>
+                </div>
+
+
+                {/* PROJECT ABOUT BAR */}
+                <div className='project'>
+
                 </div>
         </div>
     </div>
