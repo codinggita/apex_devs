@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/About.css'
 import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png'
+import ContactCard from '../microComponent/ContactCard'
 
 function About() {
   return (
@@ -38,7 +39,7 @@ function About() {
       {/* CONTACT */}
       <div className='about-contact'>
         <div className='about-contact-text text'>Contact</div>
-        <div className=''></div>
+        <ContactCard/>
       </div>
 
     </div>
