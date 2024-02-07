@@ -38,6 +38,9 @@ function Community() {
         <ThreadCard/>
       </div>
 
+
+
+
       </div>
     </div>
   )

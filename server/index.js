@@ -1,16 +1,19 @@
 import express from "express";
 import bodyParser from "body-parser";
 import profileRoutes from "./routes/profile.js"
+import projectRoutes from "./routes/project.js"
 import database from "./config/database.js"
 
 const app = express();
 const port = 3000;
+
 app.use(bodyParser.json())
 app.use(express.json())
 
 database;
 
 app.use("/", profileRoutes)
+app.use("/", projectRoutes)
 // app.use("/", communityRoutes );
 
 app.get("/*", (req,res)=>{
