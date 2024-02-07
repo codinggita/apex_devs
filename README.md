@@ -24,7 +24,7 @@ It just makes it easy for developers to stay in touch with each other and get a 
   - Profile reputation system for devs which shows their activity level on website
   - Build a strong profile to showcase your skills by getting achivements.
 
-## ApexDevsLink
+## ApexDevs Netlify Link
 
 Link: https://apexdevs.netlify.app/
 
