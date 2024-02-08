@@ -129,7 +129,7 @@
 
 .inputClass:focus{
     border: 3px solid #ffffff;
-    box-shadow: 0 0 15px #00BF62;
+    /* box-shadow: 0 0 15px #00BF62; */
     border-radius: 30px;
 }
 

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/About.css'
 import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png'
 import ContactCard from '../microComponent/ContactCard'
 
 function About() {
+
   return (
     <>
     <div className='super-about-container'>
@@ -38,7 +39,6 @@ function About() {
 
       {/* CONTACT */}
       <div className='about-contact'>
-        <div className='about-contact-text text'>Contact</div>
         <ContactCard/>
       </div>
 

@@ -1,85 +1,82 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/LogIn.css';
+import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
+import "../styles/LogIn.css";
 
-function LogIn() {
+function LogIn(){
+  
+  const[form, setForm] = useState({});
+
+  const handleForm = (e)=>{
+    setForm({
+      ...form,
+      [e.target.name] : e.target.value
+    })
+  }
+
+  const handleSubmit = async(e)=>{
+    e.preventDefault()
+    const response =  await fetch('http://localhost:3000/register',{
+      method:'GET'
+
+    })
+    console.log(form)
+  }
+
   return (
     <>
-    <div className='login-body'>
-      <div className="login-container">
-        <h1>Log in</h1>
+      <div className="login-body">
+        <div className="login-container">
+          <h1>Log in</h1>
 
-        <form action="#">
-          <div className="login-form">
-            <input
-              type="text"
-              placeholder="Username"
-              className="inputClass"
-              id="usernameInput"
-              required
-            />
-            <i className="bx bxs-user-circle"></i>
-          </div>
-          <div className="login-form">
-            {/* Correct the typo here */}
-            <input
-              type="password"
-              placeholder="Password"
-              className="inputClass"
-              id="userpassInput"
-              required
-            />
-            <i className="bx bxs-lock-alt"></i>
-          </div>
-          <div className="remember-forgot">
-            <label htmlFor="rememberMe">
+          <form onSubmit={handleSubmit}>
+
+            <div className="login-form">
               <input
-                type="checkbox"
-                id="rememberMe"
+                type="text"
+                name = "username"
+                placeholder="Username"
+                className="inputClass"
+                id="usernameInput"
+                onChange={handleForm}
+                required
               />
-              Remember me
-            </label>
-            <Link to='/forgot_password'>Forgot password?</Link>
-          </div>
-          <button type="submit" className="btn">
-            Login
-          </button>
-          <div className="register-link">
-            Don't have an account? <Link to="/sign_up">Register</Link>
-          </div>
-        </form>
-        
-      </div>
+              <i className="bx bxs-user-circle"></i>
+            </div>
+
+            <div className="login-form">
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="inputClass"
+                id="userpassInput"
+                onChange={handleForm}
+                required
+              />
+              <i className="bx bxs-lock-alt"></i>
+            </div>
+
+            <div className="remember-forgot">
+              <label htmlFor="rememberMe">
+                <input type="checkbox" id="rememberMe" />
+                Remember me
+              </label>
+              <Link to="/forgot_password">Forgot password?</Link>
+            </div>
+
+            <button type="submit" className="btn">
+              Login
+            </button>
+
+            <div className="register-link">
+              Don't have an account? <Link to="/sign_up">Register</Link>
+            </div>
+
+          </form>
+        </div>
       </div>
     </>
   );
 }
-
-
-// const usernameInput = document.getElementById("usernameInput");
-// const userpassInput = document.getElementById("userpassInput");
-
-// function addNeonBorderUsername() {
-//     usernameInput.classList.add("neon-border");
-// }
-
-// function removeNeonBorderUsername() {
-//     usernameInput.classList.remove("neon-border");
-// }
-
-// function addNeonBorderPassword() {
-//     userpassInput.classList.add("neon-border");
-// }
-
-// function removeNeonBorderPassword() {
-//     userpassInput.classList.remove("neon-border");
-// }
-
-// usernameInput.addEventListener("focus", addNeonBorderUsername);
-// usernameInput.addEventListener("blur", removeNeonBorderUsername);
-
-// userpassInput.addEventListener("focus", addNeonBorderPassword);
-// userpassInput.addEventListener("blur", removeNeonBorderPassword);
-
 
 export default LogIn;

@@ -9,6 +9,7 @@ import Profile from './components/dashboard/Profile'
 import LogIn from './components/dashboard/LogIn';
 import SignUp from './components/dashboard/SignUp';
 import Project from './components/dashboard/Project';
+import UploadProject from './components/microComponent/UploadProject';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,7 +27,7 @@ function App() {
           <Route path="/log_in" element={<LogIn/>}/>
           <Route path='/sign_up' element={<SignUp/>}/>
           <Route path='/project' element={<Project/>}/>
-          
+          <Route path='/upload' element={<UploadProject/>}/>         
         </Routes>
       </>
 
