@@ -15,7 +15,9 @@ function App() {
 
   return (
       <>
-        <div className="super-nav-bar"><Navbar/></div>  
+        <div className="super-nav-bar">
+          <Navbar/>
+        </div>  
         <Routes>
           <Route path="/" element={<><HomePage /></>} />
           <Route path="/community" element={<Community />} />

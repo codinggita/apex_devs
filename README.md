@@ -24,6 +24,9 @@ It just makes it easy for developers to stay in touch with each other and get a 
   - Profile reputation system for devs which shows their activity level on website
   - Build a strong profile to showcase your skills by getting achivements.
 
+## ApexDevs Netlify Link
+
+Link: https://apexdevs.netlify.app/
 
 ## Figma Design
 Here is link for figma design: https://www.figma.com/file/6WfLDI72EuPpJsZ9hhTWUV/ApexDevs.club?type=design&node-id=0%3A1&mode=design&t=LliCU73QTUpdVVyP-1

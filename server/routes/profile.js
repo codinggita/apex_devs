@@ -1,9 +1,10 @@
 import express from "express";
-import ExampleModel from '../models/userModels.js'
+import ExampleModel from "../models/userModels.js";
+
 const router = express.Router();
 
 // GET all profiles
-router.get('/profile', async (req, res) => {
+router.get("/profile", async (req, res) => {
   try {
     const users = await ExampleModel.find();
     res.json({ message: "Users found", users });
@@ -47,16 +48,15 @@ router.get('/profile', async (req, res) => {
 //------------------POST--------------------//
 
 // POST new user
-router.post('/profile', async (req, res) => {
-    try {
-      const newUser = await ExampleModel.create(req.body);
-      res.status(201).json({ message: "User created successfully", newUser });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: "Error while creating user" });
-    }
-  });
-  
+router.post("/profile", async (req, res) => {
+  try {
+    const newUser = await ExampleModel.create(req.body);
+    res.status(201).json({ message: "User created successfully", newUser });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error while creating user" });
+  }
+});
 
 // // POST project to user profile
 // router.post('/profile/:userName/projects', (req,res)=>{
@@ -73,7 +73,7 @@ router.post('/profile', async (req, res) => {
 // // PATCH Updating user info
 // router.patch("/profile/:userName",(req,res)=>{
 //     const index = profile.apexUsers.findIndex(
-//         (c)=>c.username===req.params.userName 
+//         (c)=>c.username===req.params.userName
 //     );
 //     if (index === -1) {
 //         console.log(`User with username ${userName} not found`);

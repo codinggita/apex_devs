@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-// import config from "./config_file";
 
 const CONNECTION_URL =
   "mongodb+srv://apexdev:temppass@apexcluster.jwousrz.mongodb.net/ ?retryWrites=true&w=majority";

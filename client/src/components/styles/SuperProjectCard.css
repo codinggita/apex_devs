@@ -1,0 +1,32 @@
+.superproject-card {
+  width: 380px;
+  height: auto;
+  background-color: rgb(49, 49, 49);
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-top {
+  padding: 10px;
+  display: flex;
+
+}
+
+.project-card-top img {
+  border: 2px solid white;
+  margin-right: 20px;
+  border-radius: 100%;
+  height: 30px;
+}
+
+.project-card-mid img {
+  height: 200px;
+  width: 100%;
+}
+
+.project-card-bottom{
+  line-height: 18px;
+  color: rgb(182, 182, 182);
+  padding: 15px;
+}
