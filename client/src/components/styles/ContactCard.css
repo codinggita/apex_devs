@@ -4,16 +4,17 @@
 }
 
 .contact-left{
-    border: 2px solid white;
+    /* border: 2px solid white; */
     /* flex-basis: 35%; */
 }
 .contact-right{
-    border: 2px solid white;
+    /* border: 2px solid white; */
     /* flex-basis: 60%; */
 }
 
 .contact-left h1{
     font-size: 40px;
+    text-align: center;
 }
 
 .contact-left p{
@@ -61,7 +62,7 @@
     border-radius: 6px;
 }
 
-/* .contact-form .btn2{
+.contact-form .btn2{
     font-size: 18px;
 }
 
@@ -74,4 +75,4 @@
 
 .copyright i{
     color: #ff004f;
-} */
+}

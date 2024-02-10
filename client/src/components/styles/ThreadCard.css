@@ -1,9 +1,30 @@
 .thread-container{
-    padding: 1rem;
-    /* border: 2px solid white; */
-    background-color: rgb(27, 27, 27);
+    border: 2px solid #004a26;
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
     height: auto;
-    width: 90%;
-    max-width: 900px;
+    width: 1500px;
+    max-width: 1000px;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-logo{
+    /* border: 2px solid rgb(255, 255, 255); */
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.user-logo img{
+    height: 100%;
+}
+
+.thread-info{
+    width: 60%;
+}
+.thread-info h2{
+    margin-bottom: 10px;
 }

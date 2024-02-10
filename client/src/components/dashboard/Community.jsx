@@ -7,7 +7,7 @@ function Community() {
     <div>
       <div className='community-super-conatainer'>
 
-      <div className='side-bar'>
+      {/* <div className='side-bar'>
         <div className='nav-side-bar side-bar-block'>
           <h2>Navigation</h2>
           <div className='side-bar-breakline'></div>
@@ -27,7 +27,7 @@ function Community() {
           <h3>ML</h3>
           <h3>C/C++</h3>
         </div>
-      </div>
+      </div> */}
 
       <div className='community-body-container'>
 
