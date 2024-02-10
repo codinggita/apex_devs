@@ -33,14 +33,14 @@ function Navbar() {
                     <button className='button-signin'>Sign Up</button>
                     </Link>
                 </div>
-
+{/* 
                 <div className='userIcon'>
                     <Link to="/profile">
                         <FaRegUserCircle
                             size={35}
                         />
                     </Link>
-                </div>
+                </div> */}
             </div>
 
         </div>

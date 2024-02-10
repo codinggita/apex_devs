@@ -1,0 +1,7 @@
+.review-container{
+    padding: 50px;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(9, 9, 9) ;
+    border: 0.6px solid rgb(67, 67, 67);
+}

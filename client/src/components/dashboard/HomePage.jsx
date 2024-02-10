@@ -3,7 +3,6 @@ import axios from "axios";
 import "../styles/HomePage.css";
 import { Link } from "react-router-dom";
 import SuperProjectCard from "../microComponent/SuperProjectCard";
-
 const homeCategory = "Angular";
 
 function HomePage() {
@@ -20,6 +19,9 @@ function HomePage() {
   return (
     <div>
       <div className="super-container">
+        {/* <div className="sidebar-container">
+        <Sidebar/>
+        </div> */}
         {/* -----------------BODY--------------- */}
         <div className="home-body">
           <div className="home-category">

@@ -2,14 +2,18 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from 'cors';
+import router from './router/auth-router.js'
 
-const router = express(); // Changed from express()
-const PORT = 5000;
-const DB = "mongodb://localhost:27017/apexdevs";
-router.use(bodyParser.json());
-router.use(cors())
-// const server = http.createServer(router);
 
+
+const app = express(); 
+const PORT = process.env.PORT || 5000;
+
+const DB = `mongodb+srv://apexdev:temppass@apexcluster.oxekarx.mongodb.net/?retryWrites=true&w=majority`;
+app.use(bodyParser.json());
+app.use(cors())
+
+// app.use('/api/auth',router)
 
 // DATABASE CONNECTION
 const connectDb = async () => {
@@ -30,13 +34,13 @@ const ProjectCardSchema = new mongoose.Schema({
   rating: { type: Number },
   date: { type: Date },
   developerName: { type: String },
-  technologiesUsed: { type: String },
+  technologiesUsed: { type: [String]  },
 });
 
 const ProjectModel = mongoose.model("projectdata", ProjectCardSchema);
 
 // POST REQUEST
-router.post("/upload", async (req, res) => {
+app.post("/upload", async (req, res) => {
   try {
     const newProject = new ProjectModel(req.body); // Changed from ProjectModel.create(req.body)
     newProject.projectId = "PROJECT" + Date.now();
@@ -49,7 +53,7 @@ router.post("/upload", async (req, res) => {
 });
 
 // GET REQUEST
-router.get("/upload", async (req, res) => { // Changed route to /projects
+app.get("/upload", async (req, res) => { // Changed route to /projects
   try {
     const projects = await ProjectModel.find({});
     res.status(201).json(projects);
@@ -61,7 +65,7 @@ router.get("/upload", async (req, res) => { // Changed route to /projects
 
 
 connectDb().then(() => {
-  router.listen(PORT, () => {
+  app.listen(PORT, () => {
     console.log(`Server listening at port: ${PORT}`);
   });
 });

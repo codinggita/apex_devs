@@ -1,7 +1,7 @@
 .super-container{
-    background-color: rgb(16, 16, 16);
+    background-color: rgb(6, 6, 6);
     width: 100%;
-    height: 300px;
+    height: 100%;
     display: flex;
 }
 
@@ -11,17 +11,17 @@
     margin: 10px 0;
 }
 
-
 .side-bar{
     padding: 20px 50px ;
-    background-color: rgb(27, 27, 27);
-    height: 120vh;
+    background-color: rgb(9, 9, 9);
+    border-right: 0.6px solid rgb(67, 67, 67);
+    height: 92vh;
     width: 300px;
     /* position: fixed; */
 }
 
 .side-bar-block h2{
-    font-size: 15px;
+    font-size: 28px;
     font-weight: 400;
 }
 
@@ -51,17 +51,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .home-category{
-    /* border: 2px solid rgb(245, 245, 245); */
+    border: 0.6px solid rgb(67, 67, 67);
     width: 85%;
     height: 50px;
     font-size: 30px;
     font-weight: 700;
     padding: 2%;
-    background-color: black;
+    background-color: rgb(9, 9, 9);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,6 +69,7 @@
 
 .home-body-grid{
     /* border: 2px solid white; */
+    border: 0.6px solid rgb(67, 67, 67);
     width: 85%;
     height: auto;
     display: flex;
@@ -78,8 +78,8 @@
     flex-wrap: wrap;
     column-gap: 3.5vw;
     row-gap: 3.5vw;
-    background-color: black;
-    padding: 50px;
+    background-color: rgb(9, 9, 9);
+    padding: 40px;
 }
 
 .home-body-grid a{
