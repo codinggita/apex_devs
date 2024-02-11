@@ -1,13 +1,16 @@
+import "../styles/HomePage.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/HomePage.css";
 import { Link } from "react-router-dom";
 import SuperProjectCard from "../microComponent/SuperProjectCard";
 
-const homeCategory = "Angular";
+const homeCategory = "Projects";
 
 function HomePage() {
+
   const [projects, setProject] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
     axios.get("http://localhost:5000/upload").then((res) => {
       console.log(res);
@@ -16,6 +19,13 @@ function HomePage() {
       }
     });
   }, []);
+  
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    if(token){
+      setIsLoggedIn(true);
+    }
+  })
 
   return (
     <div>
@@ -27,14 +37,15 @@ function HomePage() {
         <div className="home-body">
           <div className="home-category">
             {homeCategory}
-            <Link to="/upload">
-              <button className="btn">+ Upload</button>
-            </Link>
+            {isLoggedIn?  <Link to="/upload">
+              <button className="btn">Upload</button>
+            </Link>: "Log In to Uplaod"}
+
           </div>
 
           <div className="home-body-grid">
             {projects.map((project) => (
-              <Link to="/project" key={project.projectId}>
+             <Link to={`/project/${project.projectId}`} key={project.projectId}>
                 {console.log(project.imagelink)}
                 <SuperProjectCard
                   title={project.title}

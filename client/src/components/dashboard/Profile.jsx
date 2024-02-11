@@ -2,20 +2,23 @@ import React from 'react'
 import '../styles/Profile.css'
 import AchivementTab from '../microComponent/AchivementTab'
 import profileImage from "../../assets/images.png"
+import { useNavigate } from 'react-router-dom'
 
 const profileName = "Apex User"
 const profileUsername = "apex_user_123"
 
-const handleLogout = () => {
-  // Remove authentication-related items from local storage
-  localStorage.removeItem("token");
-  localStorage.removeItem("isAuthenticated");
-  // Redirect to the login page
-  navigate("/log_in");
-};
-
 
 function Profile() {
+  const navigate = useNavigate();
+  
+  const handleLogout = () => {
+    // Remove authentication-related items from local storage
+    localStorage.setItem("token", null);
+    localStorage.setItem("isAuthenticated", false);
+    navigate("/log_in");
+  };
+
+
   return (
     <div>
       <div className='profile-super-container'>

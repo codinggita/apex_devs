@@ -4,35 +4,43 @@ import "../styles/UploadProject.css";
 import CloudinaryImage from "./ImageUpload";
 
 function UploadProject(props) {
-
   const [imageUrl, setImageUrl] = useState('');
 
-  //PEOJECT
+  // PROJECT
   const [project, setProject] = useState({
     title: "",
     description: "",
     imagelink: "",
-    technologiesUsed: [], // Initialize as an empty array
+    technologiesUsed: [],
+    date: "" // Add date field
   });
 
-  
-  // HANDLE CHANGE_______________________
+  // HANDLE CHANGE
   const handleChange = (e) => {
     setProject({ ...project, [e.target.name]: e.target.value });
   };
-
 
   const handleImageUrlChange = (url) => {
     setImageUrl(url);
     setProject({ ...project, imagelink: url }); // Update project state with the image URL
   };
 
-
-  // FORM SUBMISSION HANDLE_____________
+  // FORM SUBMISSION HANDLE
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Get the current date
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-GB');
+    // Update the project object with the current date
+    const updatedProject = {
+      ...project,
+      date: formattedDate
+    };
+
+    // Submit the updated project data
     await axios
-      .post("http://localhost:5000/upload", project)
+      .post("http://localhost:5000/upload", updatedProject)
       .then((response) => {
         console.log("Project added successfully:", response.data);
       })
@@ -41,12 +49,13 @@ function UploadProject(props) {
       });
   };
   
-  // TECHNOLOGY HANDELING______________
+  // TECHNOLOGY HANDLING
   const [techInput, setTechInput] = useState(""); 
 
   const handleTechInputChange = (e) => {
     setTechInput(e.target.value);
   };
+
   const handleAddTech = () => {
     if (techInput.trim() !== "") {
       setProject({
@@ -56,16 +65,13 @@ function UploadProject(props) {
       setTechInput("");
     }
   };
+
   const handleRemoveTech = (index) => {
     const updatedTechUsed = [...project.technologiesUsed];
     updatedTechUsed.splice(index, 1);
     setProject({ ...project, technologiesUsed: updatedTechUsed });
   };
 
-
-
-
-  
   return (
     <div className="projectUploadBody">
       <div className="project-login-container">
@@ -100,8 +106,7 @@ function UploadProject(props) {
 
           <label htmlFor="imageLink">Image Link:</label>
           <br />
-            {/* <CloudinaryImage imageUrl={imageUrl} setImageUrl={setImageUrl}/> */}
-            <CloudinaryImage
+          <CloudinaryImage
             imageUrl={imageUrl}
             setImageUrl={handleImageUrlChange} // Pass handleImageUrlChange as a callback
           />
@@ -132,8 +137,8 @@ function UploadProject(props) {
               />
             </div>
           </div>
-            <br/>
-            <br/>
+          <br/>
+          <br/>
           <input type="submit" value="Submit" className="btn" />
         </form>
       </div>

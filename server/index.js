@@ -112,6 +112,28 @@ app.post('/login', async(req, res)=>{
 })
 
 
+app.get('/project/:projectId', (req, res) => {
+  // Retrieve the project ID from the request parameters
+  const projectId = req.params.projectId;
+
+  // Query the database to find the project with the specified ID
+  ProjectModel.findOne({ projectId })
+    .then(projectData => {
+      if (projectData) {
+        // If the project is found, send it as a JSON response
+        res.json(projectData);
+      } else {
+        // If the project is not found, return a 404 Not Found error
+        res.status(404).json({ error: 'Project Does Not Exist' });
+      }
+    })
+    .catch(error => {
+      // If there is an error during the database query, return a 500 Internal Server Error
+      res.status(500).json({ error: 'Internal Server Error' });
+    });
+});
+
+
 
 connectDb().then(() => {
   app.listen(PORT, () => {
