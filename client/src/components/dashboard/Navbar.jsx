@@ -4,7 +4,10 @@ import { FaRegUserCircle } from "react-icons/fa";
 import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png';
 import "../styles/Navbar.css";
 
-function Navbar({ isAuthenticated }) {
+const isAuthenticated = localStorage.getItem('isAuthenticated');
+
+
+function Navbar() {
   return (
     <div className='super-nav'>
       <div className='nav'>

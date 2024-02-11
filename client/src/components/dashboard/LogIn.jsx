@@ -32,7 +32,7 @@ function LogIn() {
 
       } else {
         setError(response.data.message || "Authentication failed");
-        localStorage.setItem("isAuthen", false);
+        localStorage.setItem("isAuthenticated", false);
       }
     } catch (error) {
       console.error("Error: ", error);

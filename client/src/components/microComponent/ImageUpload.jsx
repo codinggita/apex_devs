@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/ImageUpload.css'
 
-function CloudinaryImage() {
-  const [imageUrl, setImageUrl] = useState('');
+function CloudinaryImage(props) {
+
+
 
   const uploadImage = async (file) => {
     const formData = new FormData();
@@ -16,7 +17,7 @@ function CloudinaryImage() {
       });
 
       const data = await response.json();
-      setImageUrl(data.secure_url); 
+      props.setImageUrl(data.secure_url); 
     } catch (error) {
       console.error('Error uploading image:', error);
     }
@@ -29,7 +30,7 @@ function CloudinaryImage() {
       onChange={(e) => uploadImage(e.target.files[0])}
        />
 
-      {imageUrl ? <img src={imageUrl} alt="Uploaded" height="180px" width="260px"/> : 
+      {props.imageUrl ? <img src={props.imageUrl} alt="Uploaded" height="180px" width="260px"/> : 
       <div className='image-upload-text'>Upload Image Here</div>
       }
     </div>

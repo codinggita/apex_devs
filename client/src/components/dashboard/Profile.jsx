@@ -6,6 +6,13 @@ import profileImage from "../../assets/images.png"
 const profileName = "Apex User"
 const profileUsername = "apex_user_123"
 
+const handleLogout = () => {
+  // Remove authentication-related items from local storage
+  localStorage.removeItem("token");
+  localStorage.removeItem("isAuthenticated");
+  // Redirect to the login page
+  navigate("/log_in");
+};
 
 
 function Profile() {
@@ -45,7 +52,7 @@ function Profile() {
             <AchivementTab/>
           </div>
         </div>
-
+        <button className='btn' onClick={handleLogout}>Log Out</button> 
       </div>
     </div>
   )

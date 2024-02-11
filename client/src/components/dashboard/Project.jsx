@@ -46,7 +46,7 @@ function Project() {
 
                 {/* PROJECT ABOUT BAR */}
                 <div className=''>
-                                
+                         
                 </div>
 {/* 
                 <div className='projecr-review-section'>

@@ -35,10 +35,11 @@ function HomePage() {
           <div className="home-body-grid">
             {projects.map((project) => (
               <Link to="/project" key={project.projectId}>
+                {console.log(project.imagelink)}
                 <SuperProjectCard
                   title={project.title}
                   description={project.description}
-                  imageurl = {project.imageurl}
+                  imageurl = {project.imagelink}
                 />
               </Link>
             ))}

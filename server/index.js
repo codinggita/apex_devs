@@ -3,12 +3,13 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from 'cors';
 import jwt from 'jsonwebtoken';
-
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express(); 
 const PORT = process.env.PORT || 5000;
 
-const DB = `mongodb+srv://apexdev:temppass@apexcluster.oxekarx.mongodb.net/?retryWrites=true&w=majority`;
+const DB = process.env.DB_URL;
 app.use(bodyParser.json());
 app.use(cors())
 
@@ -100,7 +101,7 @@ app.post('/login', async(req, res)=>{
       return res.status(401).json({error: "INVALID CREDENTIALS"})
     }
 
-    const token = jwt.sign({ email: user.email }, 'super');
+    const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET_KEY);
     res.status(200).json({ token });
 
   }catch(error){

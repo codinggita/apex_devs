@@ -5,6 +5,8 @@ import CloudinaryImage from "./ImageUpload";
 
 function UploadProject(props) {
 
+  const [imageUrl, setImageUrl] = useState('');
+
   //PEOJECT
   const [project, setProject] = useState({
     title: "",
@@ -19,10 +21,16 @@ function UploadProject(props) {
     setProject({ ...project, [e.target.name]: e.target.value });
   };
 
+
+  const handleImageUrlChange = (url) => {
+    setImageUrl(url);
+    setProject({ ...project, imagelink: url }); // Update project state with the image URL
+  };
+
+
   // FORM SUBMISSION HANDLE_____________
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     await axios
       .post("http://localhost:5000/upload", project)
       .then((response) => {
@@ -92,7 +100,11 @@ function UploadProject(props) {
 
           <label htmlFor="imageLink">Image Link:</label>
           <br />
-            <CloudinaryImage />
+            {/* <CloudinaryImage imageUrl={imageUrl} setImageUrl={setImageUrl}/> */}
+            <CloudinaryImage
+            imageUrl={imageUrl}
+            setImageUrl={handleImageUrlChange} // Pass handleImageUrlChange as a callback
+          />
           <br />
           <br />
 
@@ -120,7 +132,8 @@ function UploadProject(props) {
               />
             </div>
           </div>
-
+            <br/>
+            <br/>
           <input type="submit" value="Submit" className="btn" />
         </form>
       </div>
