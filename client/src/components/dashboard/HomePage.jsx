@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/HomePage.css";
 import { Link } from "react-router-dom";
 import SuperProjectCard from "../microComponent/SuperProjectCard";
+
 const homeCategory = "Angular";
 
 function HomePage() {
@@ -33,10 +34,11 @@ function HomePage() {
 
           <div className="home-body-grid">
             {projects.map((project) => (
-              <Link to="/project">
+              <Link to="/project" key={project.projectId}>
                 <SuperProjectCard
                   title={project.title}
                   description={project.description}
+                  imageurl = {project.imageurl}
                 />
               </Link>
             ))}

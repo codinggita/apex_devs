@@ -22,6 +22,7 @@
   }
 
   .btn{
+    margin: none;
     display: inline-block;
     border:none;
     padding: 5px 10px;
@@ -29,7 +30,6 @@
     font-weight: 600;
     border-radius: 5px;
     background: #00BF62;
-
 }
 
 

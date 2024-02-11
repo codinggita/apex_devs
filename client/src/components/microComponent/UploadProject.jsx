@@ -3,22 +3,39 @@ import axios from "axios";
 import "../styles/UploadProject.css";
 import CloudinaryImage from "./ImageUpload";
 
-function UploadProject() {
+function UploadProject(props) {
+
+  //PEOJECT
   const [project, setProject] = useState({
     title: "",
     description: "",
-    imageLink: "",
+    imagelink: "",
     technologiesUsed: [], // Initialize as an empty array
   });
 
-  const [techInput, setTechInput] = useState(""); // State to manage the input for technologies
-
+  
   // HANDLE CHANGE_______________________
   const handleChange = (e) => {
     setProject({ ...project, [e.target.name]: e.target.value });
   };
 
+  // FORM SUBMISSION HANDLE_____________
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await axios
+      .post("http://localhost:5000/upload", project)
+      .then((response) => {
+        console.log("Project added successfully:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error while adding project:", error);
+      });
+  };
+  
   // TECHNOLOGY HANDELING______________
+  const [techInput, setTechInput] = useState(""); 
+
   const handleTechInputChange = (e) => {
     setTechInput(e.target.value);
   };
@@ -37,20 +54,10 @@ function UploadProject() {
     setProject({ ...project, technologiesUsed: updatedTechUsed });
   };
 
-  // FORM SUBMISSION HANDLE_____________
-  const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    await axios
-      .post("http://localhost:5000/upload", project)
-      .then((response) => {
-        console.log("Project added successfully:", response.data);
-      })
-      .catch((error) => {
-        console.error("Error while adding project:", error);
-      });
-  };
 
+
+  
   return (
     <div className="projectUploadBody">
       <div className="project-login-container">
@@ -85,7 +92,7 @@ function UploadProject() {
 
           <label htmlFor="imageLink">Image Link:</label>
           <br />
-          <CloudinaryImage />
+            <CloudinaryImage />
           <br />
           <br />
 

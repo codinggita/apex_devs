@@ -1,9 +1,8 @@
 import React from "react";
 import "../styles/SuperProjectCard.css";
 import Images from "../../assets/images.png";
-import Netflix from "../../assets/Netflix.png";
 
-function SuperProjectCard({ title, description }) {
+function SuperProjectCard({title, description, imageurl}) {
   // Return function with HTML code
   return (
     <div className="superproject-card">
@@ -12,7 +11,7 @@ function SuperProjectCard({ title, description }) {
         <h2>{title}</h2>
       </div>
       <div className="project-card-mid">
-        <img src={Netflix} alt="" />
+        <img src={imageurl} alt=""/>
       </div>
       <div className="project-card-bottom">
         <p>{description}</p>

@@ -16,7 +16,6 @@ function CloudinaryImage() {
       });
 
       const data = await response.json();
-      console.log(data.secure_url);
       setImageUrl(data.secure_url); 
     } catch (error) {
       console.error('Error uploading image:', error);
@@ -25,9 +24,6 @@ function CloudinaryImage() {
 
   return (
     <div className='image-upload-container'>
-
-        {console.log("Imageurl: ",imageUrl)}
-
       <input 
       type="file" 
       onChange={(e) => uploadImage(e.target.files[0])}
