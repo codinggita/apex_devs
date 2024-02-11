@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/UploadProject.css";
+import CloudinaryImage from "./ImageUpload";
 
-function UploadProject() {
+function UploadProject(props) {
+
+  //PEOJECT
   const [project, setProject] = useState({
     title: "",
     description: "",
-    imageLink: "",
-    technologiesUsed: "",
+    imagelink: "",
+    technologiesUsed: [], // Initialize as an empty array
   });
 
-
+  
+  // HANDLE CHANGE_______________________
   const handleChange = (e) => {
     setProject({ ...project, [e.target.name]: e.target.value });
   };
 
+  // FORM SUBMISSION HANDLE_____________
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,9 +31,33 @@ function UploadProject() {
       .catch((error) => {
         console.error("Error while adding project:", error);
       });
+  };
+  
+  // TECHNOLOGY HANDELING______________
+  const [techInput, setTechInput] = useState(""); 
 
+  const handleTechInputChange = (e) => {
+    setTechInput(e.target.value);
+  };
+  const handleAddTech = () => {
+    if (techInput.trim() !== "") {
+      setProject({
+        ...project,
+        technologiesUsed: [...project.technologiesUsed, techInput.trim()],
+      });
+      setTechInput("");
+    }
+  };
+  const handleRemoveTech = (index) => {
+    const updatedTechUsed = [...project.technologiesUsed];
+    updatedTechUsed.splice(index, 1);
+    setProject({ ...project, technologiesUsed: updatedTechUsed });
   };
 
+
+
+
+  
   return (
     <div className="projectUploadBody">
       <div className="project-login-container">
@@ -63,31 +92,34 @@ function UploadProject() {
 
           <label htmlFor="imageLink">Image Link:</label>
           <br />
-          <input
-            className="inputClassProject"
-            type="text"
-            id="imageLink"
-            name="imageLink"
-            value={project.imageLink}
-            onChange={handleChange}
-            required
-          />
+            <CloudinaryImage />
           <br />
           <br />
 
-          <label htmlFor="technologiesUsed">Technologies Used:</label>
-          <br />
-          <input
-            className="inputClassProject"
-            type="text"
-            id="technologiesUsed"
-            name="technologiesUsed"
-            value={project.technologiesUsed}
-            onChange={handleChange}
-            required
-          />
-          <br />
-          <br />
+          <div>
+            <label htmlFor="technologiesUsed">Technologies Used:</label>
+            <br />
+            <div className="tags-container">
+              {project.technologiesUsed.map((tech, index) => (
+                <div key={index} className="tag">
+                  {tech}
+                  <button type="button" onClick={() => handleRemoveTech(index)}>
+                    &#10060;
+                  </button>
+                </div>
+              ))}
+              <input
+                className="inputClassProject"
+                type="text"
+                id="technologiesUsed"
+                name="technologiesUsed"
+                value={techInput}
+                onChange={handleTechInputChange}
+                onBlur={handleAddTech}
+                placeholder="Add technologies..."
+              />
+            </div>
+          </div>
 
           <input type="submit" value="Submit" className="btn" />
         </form>

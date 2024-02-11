@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/Project.css'
 import ProjectImg from '../../assets/netflix_clone.png'
+import ReviewTab from '../microComponent/ReviewTab'
 
 const description = "Welcome to FlutterFlix, your ultimate destination for streaming the latest and greatest movies and TV shows right from your Flutter-powered device! Immerse yourself in a world of entertainment with our Netflix-inspired app, designed and developed using the power of Flutter." 
 const projectTitle = "Netflix Clone by using flutter"
@@ -44,9 +45,13 @@ function Project() {
 
 
                 {/* PROJECT ABOUT BAR */}
-                <div className='project'>
-
+                <div className=''>
+                                
                 </div>
+{/* 
+                <div className='projecr-review-section'>
+                    <ReviewTab/>
+                </div> */}
         </div>
     </div>
   )

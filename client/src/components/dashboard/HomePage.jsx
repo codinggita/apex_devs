@@ -20,6 +20,9 @@ function HomePage() {
   return (
     <div>
       <div className="super-container">
+        {/* <div className="sidebar-container">
+        <Sidebar/>
+        </div> */}
         {/* -----------------BODY--------------- */}
         <div className="home-body">
           <div className="home-category">
@@ -31,10 +34,11 @@ function HomePage() {
 
           <div className="home-body-grid">
             {projects.map((project) => (
-              <Link to="/project">
+              <Link to="/project" key={project.projectId}>
                 <SuperProjectCard
                   title={project.title}
                   description={project.description}
+                  imageurl = {project.imageurl}
                 />
               </Link>
             ))}

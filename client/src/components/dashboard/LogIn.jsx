@@ -1,26 +1,43 @@
-import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+// import jwt from "jsonwebtoken"; // Import jsonwebtoken library
 import "../styles/LogIn.css";
 
-function LogIn(){
-  
-  const[form, setForm] = useState({});
+function LogIn() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleForm = (e)=>{
-    setForm({
-      ...form,
-      [e.target.name] : e.target.value
-    })
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5000/login", {
+        username,
+        password,
+      });
 
-  const handleSubmit = async(e)=>{
-    e.preventDefault()
-    const response =  await fetch('http://localhost:3000/register',{
-      method:'GET'
+      if (response.status === 200) {
+        // Successful login
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        localStorage.setItem("isAuthenticated", true);
+        console.log("LOGGED IN SUCCESSFULLY");
 
-    })
-    console.log(form)
-  }
+        // Decode and log token
+        // const decodedToken = jwt.decode(token);
+        // console.log("Decoded Token:", decodedToken);
+        navigate("/");
+
+      } else {
+        setError(response.data.message || "Authentication failed");
+        localStorage.setItem("isAuthen", false);
+      }
+    } catch (error) {
+      console.error("Error: ", error);
+    }
+  };
 
   return (
     <>
@@ -29,15 +46,15 @@ function LogIn(){
           <h1>Log in</h1>
 
           <form onSubmit={handleSubmit}>
-
             <div className="login-form">
               <input
                 type="text"
-                name = "username"
+                name="username"
                 placeholder="Username"
                 className="inputClass"
                 id="usernameInput"
-                onChange={handleForm}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
               <i className="bx bxs-user-circle"></i>
@@ -50,11 +67,15 @@ function LogIn(){
                 placeholder="Password"
                 className="inputClass"
                 id="userpassInput"
-                onChange={handleForm}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
                 required
               />
               <i className="bx bxs-lock-alt"></i>
             </div>
+
+            {error && <div className="error-message">{error}</div>}
 
             <div className="remember-forgot">
               <label htmlFor="rememberMe">
@@ -64,14 +85,13 @@ function LogIn(){
               <Link to="/forgot_password">Forgot password?</Link>
             </div>
 
-            <button type="submit" className="btn">
+            <button className="btn" type="submit">
               Login
             </button>
 
             <div className="register-link">
               Don't have an account? <Link to="/sign_up">Register</Link>
             </div>
-
           </form>
         </div>
       </div>
