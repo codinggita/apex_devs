@@ -2,13 +2,25 @@ import React from 'react'
 import '../styles/Profile.css'
 import AchivementTab from '../microComponent/AchivementTab'
 import profileImage from "../../assets/images.png"
+import { useNavigate } from 'react-router-dom'
+
 
 const profileName = "Apex User"
 const profileUsername = "apex_user_123"
 
 
-
 function Profile() {
+  const navigate = useNavigate();
+  
+  const handleLogout = () => {
+    // Remove authentication-related items from local storage
+    localStorage.removeItem("token");
+    localStorage.removeItem("isAuthenticated");
+    navigate("/log_in");
+  };
+  
+
+
   return (
     <div>
       <div className='profile-super-container'>
@@ -45,7 +57,7 @@ function Profile() {
             <AchivementTab/>
           </div>
         </div>
-
+        <button className='btn' onClick={handleLogout}>Log Out</button> 
       </div>
     </div>
   )

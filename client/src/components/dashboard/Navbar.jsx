@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegUserCircle } from "react-icons/fa";
 import ApexLogo from '../../assets/ApexDevs_Logo_Temp.png';
 import "../styles/Navbar.css";
 
-function Navbar({ isAuthenticated }) {
+// const isAuthenticated = localStorage.getItem('isAuthenticated');
+
+
+function Navbar() {
+
+  const[isAuthenticated, setAuthentication] = useState(false)
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setAuthentication(true);
+    } else {
+      setAuthentication(false);
+    }
+  }, [isAuthenticated]);
+
+
   return (
     <div className='super-nav'>
       <div className='nav'>

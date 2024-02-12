@@ -4,12 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/SignUp.css'
 
 function SignUp() {
+  const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [agreement, setAgreement] = useState(false);
   const navigate = useNavigate();
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
 
@@ -21,7 +23,7 @@ function SignUp() {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/register', {
+      const response = await axios.post(`${domain}/register`, {
         username,
         email,
         password, // Ensure this is stored securely on the backend (e.g., hashed)
