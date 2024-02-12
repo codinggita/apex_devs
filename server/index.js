@@ -51,7 +51,7 @@ const ApexUserModel = mongoose.model("apexusersdata", ApexUserSchema);
 const ProjectModel = mongoose.model("projectdata", ProjectCardSchema);
 
 //  POST REQUEST : PROJECT UPLOAD 
-app.post(`${db_url}/upload`, async (req, res) => {
+app.post(`/upload`, async (req, res) => {
   try {
 
     const newProject = new ProjectModel(req.body);
@@ -68,7 +68,7 @@ app.post(`${db_url}/upload`, async (req, res) => {
 });
 
 // GET REQUEST FOR PROJECT
-app.get(`${db_url}/upload`, async (req, res) => { // Changed route to /projects
+app.get(`/upload`, async (req, res) => { // Changed route to /projects
   try {
     const projects = await ProjectModel.find({});
     res.status(201).json(projects);
@@ -79,7 +79,7 @@ app.get(`${db_url}/upload`, async (req, res) => { // Changed route to /projects
 });
 
 // POST REQUEST : SIGN UP
-app.post(`${db_url}/register`, async(req, res)=>{
+app.post(`/register`, async(req, res)=>{
   try{
   const newApexUser = new ApexUserModel(req.body);
   newApexUser.userId = "APEX" + Date.now();
@@ -93,7 +93,7 @@ app.post(`${db_url}/register`, async(req, res)=>{
 })
 
 // POST REQUEST : LOG IN 
-app.post(`${db_url}/login`, async(req, res)=>{
+app.post(`/login`, async(req, res)=>{
   const {username, password} = req.body;
 
   try{
@@ -113,7 +113,7 @@ app.post(`${db_url}/login`, async(req, res)=>{
 })
 
 
-app.get(`${db_url}/project/:projectId`, (req, res) => {
+app.get(`/project/:projectId`, (req, res) => {
   // Retrieve the project ID from the request parameters
   const projectId = req.params.projectId;
 
