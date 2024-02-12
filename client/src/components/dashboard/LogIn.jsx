@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-// import jwt from "jsonwebtoken"; // Import jsonwebtoken library
 import "../styles/LogIn.css";
 
 function LogIn() {
+  const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -13,7 +13,7 @@ function LogIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post(`${domain}login`, {
         username,
         password,
       });

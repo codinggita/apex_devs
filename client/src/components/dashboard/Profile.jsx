@@ -4,6 +4,7 @@ import AchivementTab from '../microComponent/AchivementTab'
 import profileImage from "../../assets/images.png"
 import { useNavigate } from 'react-router-dom'
 
+
 const profileName = "Apex User"
 const profileUsername = "apex_user_123"
 
@@ -13,10 +14,11 @@ function Profile() {
   
   const handleLogout = () => {
     // Remove authentication-related items from local storage
-    localStorage.setItem("token", null);
-    localStorage.setItem("isAuthenticated", false);
+    localStorage.removeItem("token");
+    localStorage.removeItem("isAuthenticated");
     navigate("/log_in");
   };
+  
 
 
   return (

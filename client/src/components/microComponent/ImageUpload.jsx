@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/ImageUpload.css'
 
+
 function CloudinaryImage(props) {
 
+  const cloudinaryLink = import.meta.env.CLOUDINARY_LINK;
 
 
   const uploadImage = async (file) => {
@@ -11,7 +13,7 @@ function CloudinaryImage(props) {
     formData.append('upload_preset', 'waplgf2w');
 
     try {
-      const response = await fetch(`https://api.cloudinary.com/v1_1/djkjt3zgy/image/upload`, {
+      const response = await fetch(`${cloudinaryLink}`, {
         method: 'POST',
         body: formData,
       });

@@ -55,7 +55,7 @@
 
 .home-category{
     border: 0.6px solid rgb(67, 67, 67);
-    width: 85%;
+    width: 75%;
     height: 50px;
     font-size: 30px;
     font-weight: 700;
@@ -64,13 +64,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0;
+    margin-top: 100px;
+    /* margin: 20px 0; */
+    margin-left: 15%;
+
 }
 
 .home-body-grid{
     /* border: 2px solid white; */
     border: 0.6px solid rgb(67, 67, 67);
-    width: 85%;
+    width: 75%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -80,6 +83,7 @@
     row-gap: 3.5vw;
     background-color: rgb(9, 9, 9);
     padding: 40px;
+    margin-left: 15%;
 }
 
 .home-body-grid a{

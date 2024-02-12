@@ -4,6 +4,7 @@ import "../styles/UploadProject.css";
 import CloudinaryImage from "./ImageUpload";
 
 function UploadProject(props) {
+  const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
   const [imageUrl, setImageUrl] = useState('');
 
   // PROJECT
@@ -40,7 +41,7 @@ function UploadProject(props) {
 
     // Submit the updated project data
     await axios
-      .post("http://localhost:5000/upload", updatedProject)
+      .post(`${domain}/upload`, updatedProject)
       .then((response) => {
         console.log("Project added successfully:", response.data);
       })

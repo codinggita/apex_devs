@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import '../styles/Project.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import ReviewTab from '../microComponent/ReviewTab'
+// import ReviewTab from '../microComponent/ReviewTab'
 
 const description = "Welcome to FlutterFlix, your ultimate destination for streaming the latest and greatest movies and TV shows right from your Flutter-powered device! Immerse yourself in a world of entertainment with our Netflix-inspired app, designed and developed using the power of Flutter." 
 const projectTitle = "Netflix Clone by using flutter"
@@ -12,14 +12,14 @@ const projectDate = "24-5-2024"
 const projectTechList = ["Dart", "HTML", "Java", "ReactJS","Dart"]
 
 function Project() {
-
+    const domain = import.meta.env.VITE_REACT_APP_DOMAIN;
     const { projectId } = useParams();
     const [project, setProject] = useState(null);
   
     useEffect(() => {
       const fetchProjectDetails = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/project/${projectId}`);
+          const response = await axios.get(`${domain}/project/${projectId}`);
           setProject(response.data);
         } catch (error) {
           console.error('Error fetching project details:', error);
