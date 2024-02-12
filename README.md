@@ -26,7 +26,11 @@ It just makes it easy for developers to stay in touch with each other and get a 
 
 ## ApexDevs Netlify Link
 
-Link: https://apexdevs.netlify.app/
+Link: https://main--apexdevs.netlify.app
+
+## ApexDes Render Link
+
+Link: https://apexdevs-club.onrender.com
 
 ## Figma Design
 Here is link for figma design: https://www.figma.com/file/6WfLDI72EuPpJsZ9hhTWUV/ApexDevs.club?type=design&node-id=0%3A1&mode=design&t=LliCU73QTUpdVVyP-1
